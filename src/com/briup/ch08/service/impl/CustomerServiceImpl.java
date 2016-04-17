@@ -21,8 +21,19 @@ public class CustomerServiceImpl implements ICustomerService {
 	 * @return com.briup.ch08.bean.Customer
 	 */
 	public Customer login(String name, String password) throws ServiceException {
-
-		return null;
+    Customer customer = null;
+    Customer dbCustomer = customerDao.findByName(name);
+    if(dbCustomer!= null){
+    	if(dbCustomer.getPassword().equals(password)){
+    		customer = dbCustomer;
+    	}else{
+    		throw new ServiceException("密码错误");
+    	}
+    	
+    }else{
+    	throw new ServiceException("该用户不存在");
+    }
+		return customer;
 	}
 
 	/**
