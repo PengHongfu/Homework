@@ -11,31 +11,33 @@ public class ConnectionFactory {
 	private static String url;
 	private static String user;
 	private static String password;
-	
+
 	static {
 		driver = "com.mysql.jdbc.Driver";
-		//jdbc:mysql://ip:port/dbName
-		url="jdbc:mysql://127.0.0.1:3306/test";
+		// jdbc:mysql://ip:port/dbName
+		url = "jdbc:mysql://127.0.0.1:3306/test";
 		user = "root";
 		password = "mysql";
-		
+
 	}
-	
-	public static Connection getConn() throws Exception{
+
+	public static Connection getConn() throws Exception {
 		//
 		Class.forName(driver);
 		//
 		return DriverManager.getConnection(url, user, password);
-		
+
 	}
-	public static void close(ResultSet rs,PreparedStatement pstmt,Connection conn) throws SQLException{
-		if(rs!=null){
+
+	public static void close(ResultSet rs, PreparedStatement pstmt,
+			Connection conn) throws SQLException {
+		if (rs != null) {
 			rs.close();
 		}
-		if(pstmt!=null){
+		if (pstmt != null) {
 			pstmt.close();
 		}
-		if(conn!=null){
+		if (conn != null) {
 			conn.close();
 		}
 	}

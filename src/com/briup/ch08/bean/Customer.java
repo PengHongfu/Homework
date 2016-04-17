@@ -1,4 +1,5 @@
 package com.briup.ch08.bean;
+
 /**
  * Pojo(JavaBean)
  * */
@@ -12,12 +13,12 @@ public class Customer {
 	public Customer() {
 
 	}
+
 	public Customer(String name, Integer age, String password) {
 		this.name = name;
 		this.age = age;
 		this.password = password;
 	}
-
 
 	public Long getId() {
 		return id;
@@ -50,11 +51,12 @@ public class Customer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public String getAddress() {
 		return address;
 	}
+
 	public void setAddress(String address) {
 		this.address = address;
 	}
 }
-
