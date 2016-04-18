@@ -13,8 +13,7 @@ public interface ICustomerService {
 	 */
 	public Customer login(String name, String password) throws ServiceException;
 
-	/**
-	 * @param customer
-	 */
-	public void register(Customer customer);
+
+	public void register(Customer customer)throws ServiceException;
+	public void delete(String name)throws ServiceException;
 }

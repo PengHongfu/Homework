@@ -11,9 +11,6 @@ public class CustomerAction {
 
 	}
 
-	/**
-	 * @return java.lang.String
-	 */
 	public String login() {
 		return null;
 	}

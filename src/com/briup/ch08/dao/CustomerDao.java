@@ -48,11 +48,27 @@ public class CustomerDao {
 		}
 	}
 
-	public void deleteById(long id) {
-
+	public void deleteByName(String name) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			
+				// 1.2 获取连接
+				conn = ConnectionFactory.getConn();
+				// 3. �pstmt对象
+				String sql = "delete from rj12_customer where name = ?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, name);
+				// 4. 执行sql
+				pstmt.executeUpdate();
+				
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
-
+//查询id
 	public Customer findByName(String name) {
 		Customer customer = null;
 		Connection conn = null;
@@ -67,7 +83,6 @@ public class CustomerDao {
 				String sql = "select * from rj12_customer where name = ?";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, name);
-
 				// 4. 执行sql
 				rs = pstmt.executeQuery();
 				while (rs.next()) {	
@@ -86,4 +101,5 @@ public class CustomerDao {
 		}
 		return customer;
 	}
+	
 }
