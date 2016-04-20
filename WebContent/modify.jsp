@@ -4,19 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>注册</title>
+<title>修改</title>
 </head>
 <body style="margin:0px; background-position-x: center; background-image: url(image/li.jpg); background-repeat: repeat-y;">
 	<center>
-		<h1>注册页面</h1>
+		<h1>修改页面</h1>
 		<hr>
-		<form action="register" method="post">
-			用户名:<input type="text" name="name"><br> 
-			密码:<input type="password" name="password"><br> 
-			年龄:<input type="text" name="age"><br>
-			<input type="submit" value="注册">
-
-
+		<form action="modify" method="post">
+			用户名:<input type="text" name="name"><br>
+			密码:<input type="text" name="password"><br> 
+			<input type="submit" value="提交">&nbsp&nbsp&nbsp<input type=reset value="重置">
 		</form>
 	</center>
 </body>

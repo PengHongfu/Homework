@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="margin:0px; background-position-x: center; background-image: url(image/1.jpg); background-repeat: repeat-y;">
 <h1>注册成功</h1>
 </body>
 </html>

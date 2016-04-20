@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>登陆</title>
 </head>
-<body>
+<body style="margin:0px; background-position-x: center; background-image: url(image/li.jpg); background-repeat: repeat-y;">
 	<center>
 		<h1>登陆页面</h1>
 		<hr>
@@ -14,7 +14,7 @@
 			用户名:<input type="text" name="name"><br> 
 			密码:<input type="password" name="password"><br> 
 			
-			<input type="submit" value="登录">
+			<input type="submit" value="登录">&nbsp &nbsp&nbsp<input type=reset value="重置">
 
 
 		</form>

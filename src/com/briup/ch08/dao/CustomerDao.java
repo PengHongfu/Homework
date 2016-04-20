@@ -101,5 +101,59 @@ public class CustomerDao {
 		}
 		return customer;
 	}
-	
+	public  void findAll(String name) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+			try {
+				// 1.2 获取连接
+				conn = ConnectionFactory.getConn();
+				// 3. �pstmt对象
+				String sql = "select * from rj12_customer where name = ?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, name);
+				// 4. 执行sql
+				rs = pstmt.executeQuery();
+				while (rs.next()) {	
+					long id = rs.getLong("id");
+					String password = rs.getString("password");
+					int age = rs.getInt("age");
+				   System.out.print(id+"\n");
+				   System.out.print(age+"\n");
+				   System.out.print(password+"\n");
+				}
+			} finally {
+				// 6释放资源
+				ConnectionFactory.close(rs, pstmt, conn);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	public void modify(Customer customer) {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			try {
+					// 1.2 获取连接
+					conn = ConnectionFactory.getConn();
+					// 3. �pstmt对象
+					String sql = "update rj12_customer "
+							+"set password =? "
+							+ "where name = ?";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, customer.getPassword());
+					pstmt.setString(2, customer.getName());
+					// 4. 执行sql
+					pstmt.executeUpdate();
+					
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
+
 }

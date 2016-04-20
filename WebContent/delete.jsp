@@ -6,13 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>删除</title>
 </head>
-<body>
+<body style="margin:0px; background-position-x: center; background-image: url(image/li.jpg); background-repeat: repeat-y;">
+
 	<center>
 		<h1>删除页面</h1>
 		<hr>
 		<form action="delete" method="post">
 			用户名:<input type="text" name="name"> 
-			<input type="submit" value="删除">
+			<input type="submit" value="删除"><input type = reset value = "重置">
 
 
 		</form>

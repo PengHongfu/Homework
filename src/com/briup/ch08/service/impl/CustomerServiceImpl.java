@@ -45,12 +45,18 @@ public class CustomerServiceImpl implements ICustomerService {
 	 */
 	public void register(Customer customer) {
 		customerDao.save(customer);
-
 	}
 	//删除用户
 	public void delete(String name)throws ServiceException{
 		customerDao.deleteByName(name);
 		
+	}
+	public void find(String name)throws ServiceException{
+		customerDao.findAll(name);	
+	}
+	public void modify(Customer customer){
+		customerDao.modify(customer);
+
 	}
 };
 		

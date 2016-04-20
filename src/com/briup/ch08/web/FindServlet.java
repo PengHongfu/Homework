@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.briup.ch08.service.ICustomerService;
 import com.briup.ch08.service.impl.CustomerServiceImpl;
 
-@WebServlet("/delete")
-public class DeleteServlet extends HttpServlet {
+@WebServlet("/find")
+public class FindServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
 	private ICustomerService customerService;
 
-	public DeleteServlet() {
+	public FindServlet() {
 		super();
 		customerService = new CustomerServiceImpl();
 	}
@@ -36,10 +36,8 @@ public class DeleteServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		//Customer customer = new Customer(name, age, password);
 		System.out.println(name);
-		customerService.delete(name);
-		// 页面跳转
-
-		 request.getRequestDispatcher("/success.jsp").forward(request, response);
+		customerService.find(name);
+		request.getRequestDispatcher("/showmessage.jsp").forward(request, response);
 	}
 
 }
